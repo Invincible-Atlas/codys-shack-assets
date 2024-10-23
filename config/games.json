@@ -497,11 +497,17 @@
     "title": "Krunker",
     "": ""
   },
+
   {
     "link": "projects/learntofly/index.html",
     "imgSrc": "projects/learntofly/learntofly.png",
     "title": "Learn To Fly",
     "": ""
+  },  
+  {
+    "link":"projects/learn2fly/index.html",
+    "imgSrc":"",
+    "title":"Learn To Fly 2" 
   },
   {
     "link": "projects/mario/index.html",
