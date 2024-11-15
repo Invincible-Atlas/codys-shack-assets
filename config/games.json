@@ -6,12 +6,6 @@
     "": ""
   },
   {
-    "link": "projects/2048/index.html",
-    "imgSrc": "projects/2048/thumb.png",
-    "title": 2048,
-    "": ""
-  },
-  {
     "link": "projects/1v1lol/",
     "imgSrc": "projects/1v1lol/1v1lol.png",
     "title": "1v1.LOL",
@@ -21,6 +15,12 @@
     "link": "projects/1v1space/index.html",
     "imgSrc": "projects/1v1space/splash.png",
     "title": "1v1.space",
+    "": ""
+  },
+  {
+    "link": "projects/2048/index.html",
+    "imgSrc": "projects/2048/thumb.png",
+    "title": 2048,
     "": ""
   },
   {
@@ -180,10 +180,8 @@
     "": ""
   },
   {
-    "link": "projects/cookie-clicker/index.html",
-    "imgSrc": "projects/cookie-clicker/cookie1.jpeg",
-    "title": "Cookie Clicker",
-    "": ""
+    "link": "project\\output\\cookieclicker\\index.html",
+    "title": "Cookie Clicker"
   },
   {
     "link": "projects/craftmine/index.html",
@@ -414,6 +412,10 @@
     "": ""
   },
   {
+    "link": "project\\output\\gravioroids\\index.html",
+    "title": "Gravioroids"
+  },
+  {
     "link": "projects/grindcraft/index.html",
     "imgSrc": "projects/grindcraft/img/splash.png",
     "title": "Grind Craft",
@@ -497,17 +499,16 @@
     "title": "Krunker",
     "": ""
   },
-
   {
     "link": "projects/learntofly/index.html",
     "imgSrc": "projects/learntofly/learntofly.png",
     "title": "Learn To Fly",
     "": ""
-  },  
+  },
   {
-    "link":"projects/learn2fly/index.html",
-    "imgSrc":"",
-    "title":"Learn To Fly 2" 
+    "link": "projects/learn2fly/index.html",
+    "imgSrc": "",
+    "title": "Learn To Fly 2"
   },
   {
     "link": "projects/mario/index.html",
@@ -552,6 +553,10 @@
     "": ""
   },
   {
+    "link": "project\\output\\MonkeyMart-gh-pages\\index.html",
+    "title": "Monkeymart"
+  },
+  {
     "link": "projects/motox3m/index.html",
     "imgSrc": "projects/motox3m/splash.jpg",
     "title": "MotoX3M",
@@ -575,12 +580,7 @@
     "title": "MotoX3M Winter",
     "": ""
   },
-  {
-    "link": "projects/n-gon/index.html",
-    "imgSrc": "projects/n-gon/bot.png",
-    "title": "n-gon",
-    "": ""
-  },
+  { "link": "project\\output\\n-gon-master\\index.html", "title": "N-Gon" },
   {
     "link": "projects/ns-shaft/index.html",
     "imgSrc": "projects/ns-shaft/favicon.png",
@@ -593,6 +593,7 @@
     "title": "Om Nom Bounce",
     "": ""
   },
+  { "link": "project\\output\\outerorbit\\index.html", "title": "Outer Orbit" },
   {
     "link": "projects/pandemic2/index.html",
     "imgSrc": "projects/pandemic2/pandemic2.png",
@@ -629,6 +630,7 @@
     "title": "PolyBranch",
     "": ""
   },
+  { "link": "project\\output\\polytrack\\index.html", "title": "Polytrack" },
   {
     "link": "projects/portalflash/index.html",
     "imgSrc": "projects/portalflash/portaltheflashversion.jpg",
@@ -654,14 +656,11 @@
     "": ""
   },
   {
-    "link":"projects/redshift/index.html",
-    "imgSrc":"",
-    "title":"Redshift",
-    "":""
-
-
+    "link": "projects/redshift/index.html",
+    "imgSrc": "",
+    "title": "Redshift",
+    "": ""
   },
-
   {
     "link": "projects/retro-bowl/index.html",
     "imgSrc": "projects/retro-bowl/img/icon.jpg",

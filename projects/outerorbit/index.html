@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Outer Orbit</title>
+	<meta name="viewport" content="width=848, maximum-scale=1.0" />
+	<script src="outerorbit.js?v=1.2.9" type="text/javascript" defer></script>
+	<link rel="stylesheet" href="outerorbit.css?v=1.2.1" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="fonts.css" type="text/css" charset="utf-8" />
+	<meta name="application-name" content="Outer Orbit" />
+	<meta name="description" content="Outer Orbit is a &quot;Spacewar!-for-one&quot; as a tribute to the line of heritage of digital video games, combining elements of three of the most classic games, Spacewar, Computer Space, and Asteroids." />
+	<meta name="keywords" content="Outer Orbit, Spacewar-for-one, video game" />
+	<meta property="og:title" content="Outer Orbit, a &quot;Spacewar!-for-one&quot; video game" />
+	<meta property="og:type" content="website" />
+	<!-- <meta property="og:url" content="https://www.masswerk.at/outerorbit/" /> -->
+	<meta property="og:image" content="outerorbit/assets/preview.jpg"/>
+	<meta property="og:site_name" content="Outer Orbit, a &quot;Spacewar!-for-one&quot; video game" />
+	<meta property="og:description" content="Outer Orbit is a tribute to the line of heritage of digital video games, combining elements of three of the most classic games, Spacewar, Computer Space, and Asteroids." />
+	<meta name="twitter:image" content="/assets/preview.jpg" />
+	<link rel="image_src" href="/assets/preview.jpg" />
+	<link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="favicon.ico" />
+</head>
+<body>
+	<div id="marquee"><h1>Outer Orbit</h1></div>
+	<noscript>Interactive content &mdash; JavaScript required.</noscript>
+	<canvas id="crt" aria-label="A video game"></canvas>
+	<div id="options" aria="hidden">
+		<fieldset><label>Keyboard:</label><select id="keyboardSelect">
+				<option value="int" selected>WASD &ndash; intl (QWERT)</option>
+				<option value="fr">ZQSD &ndash; fr (AZERT)</option>
+				<option value="dvorak">,AOE &ndash; Dvorak</option>
+				<option value="arcade1">SDKL &ndash; Arcade 1</option>
+				<option value="arcade2">DGAS &ndash; Arcade 2</option>
+			</select>
+		</fieldset>
+		<fieldset><input type="checkbox" id="cbxFxEnable" /><label for="cbxFxEnable">Sound</label><label id="labelFxVolume">Vol.</label><input type="range" id="fxVolume" min="0" max="100" value="50" /></fieldset>
+		<fieldset><input type="checkbox" id="cbxArcadeButtons" /><label for="cbxArcadeButtons">Touch Buttons</label><input type="checkbox" id="cbxLowGravity" /><label for="cbxLowGravity">Low Gravity</label><input type="checkbox" id="cbxStoreHS" /><label for="cbxStoreHS" class="notranslate">Save High Scores</label></fieldset>
+	</div>
+	<div id="arcadebuttons" aria="hidden"></div>
+	<div class="spacerU2766" aria="hidden"><img src="assets/U2766.svg" width="14" height="18" alt="&#x2766;" style="height: 20px; width: auto;"/></div>
+	<div id="fullscreenToggle" onclick="OuterOrbit.toggleFullscreen();"></div>
+	<div id="about">
+		<p><strong>About Outer Orbit</strong><br />
+		<em>Outer Orbit</em> is an attempt to create a &ldquo;Spacewar!-for-one&rdquo; as a tribute to the line of heritage of digital video games. It combines elements of the most classic shooter games, <em>Spacewar!</em> (1961/62) <a href="/spacewar/">[1]</a>, the first known video game on a digital computer, <em>Computer Space</em> (1971) <a href="/rc2017/04/02.html" target="_blank">[2]</a> <a href="/icss/" target="_blank">[3]</a> <a href="https://en.wikipedia.org/wiki/Computer_Space" target="_blank" rel="noopener">[4]</a>, the first coin-operated digital video game, and <em>Asteroids</em> (1979) <a href="https://en.wikipedia.org/wiki/Asteroids_(video_game)" target="_blank" rel="noopener">[5]</a>:</p>
+		<ul>
+			<li>From <em>&ldquo;<a href="/spacewar/" target="_blank">Spacewar!</a>&rdquo;</em> it borrows the comic book spaceship, the central star, gravity and orbital mechanics,</li>
+			<li>from <em>&ldquo;<a href="/icss/" target="_blank">Computer Space</a>&rdquo;</em> the game mechanics of the saucer opponents and the time-based gameplay,</li>
+			<li>from <em>&ldquo;<a href="https://en.wikipedia.org/wiki/Asteroids_(video_game)" target="_blank" rel="noopener">Asteroids</a>&rdquo;,</em> well, the asteroids, which serve here just as additional obstacles to make the game a bit trickier.</li>
+		</ul>
+		<p>Enjoy!</p>
+		<p><strong>Note:</strong> A wave has a fixed duration of 80 seconds. You may progress to the next wave/level, if you manage to outscore the saucers in a given level, i.e. shoot the saucers more often than your ship crashes, by this maintaining a positive balance. Mind that the balance is reset to zero at the start of each level.</p>
+		<p><strong>Tip:</strong> Like in <em>Spacewar!</em> enter an orbit around the gravitational star by aligning your spaceship perpendicular to its center and firing your thruster for two or three seconds. &mdash; Do not attempt to destroy asteroids, dodge them.</p>
+		<p style="margin-top: 2em;"><strong>Implementation Notes:</strong> The sound-scape is for the most a homage to <em>Computer Space,</em> less the background hum. The display font is based on definitions for a PDP-1 font renderer (early 1960s) and implemented in software. In order to bring the iterative machanics of a gravity based game to the modern age of asynchronous rendering, the game is computed internally in fixed time slices of an 1/100<sup>th</sup> of a second and the display rendered on demand.</p>
+		<p><strong>Setting an Initial Level:</strong> Experienced players may want to select the initial level by specifying a wave as an URL-parameter, as in <a href="https://www.masswerk.at/outerorbit/?wave=30">https://www.masswerk.at/outerorbit/?wave=30</a> for a game starting at wave #30.</p>
+		<p style="margin-top: 2em;"><strong>Related Links</strong><br />For a similar game, where the asteroids excert their individual gravity field each, see <a href="/gravioroids/" target="_top"><strong>Gravi-o-roids!</strong></a>.</p>
+		<p class="signature">&copy; 2017&ndash;2020 Norbert Landsteiner, <a href="/">www.masswerk.at</a>.</p>
+	</div>
+</body>
+</html>

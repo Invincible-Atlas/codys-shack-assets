@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Gravi-o-roids!</title>
+	<meta name="viewport" content="width=964, maximum-scale=1.0" />
+	<script src="gravioroids.js" defer></script>
+	<link rel="stylesheet" href="gravioroids.css" type="text/css" charset="utf-8" />
+<style>
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/webfonts/NunitoSans/nunito-sans-v6-latin-ext_latin-regular.eot'); 
+  src: local('Nunito Sans Regular'), local('NunitoSans-Regular'),
+       url('/webfonts/NunitoSans/nunito-sans-v6-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), 
+       url('/webfonts/NunitoSans/nunito-sans-v6-latin-ext_latin-regular.woff2') format('woff2'), 
+       url('/webfonts/NunitoSans/nunito-sans-v6-latin-ext_latin-regular.woff') format('woff'), 
+       url('/webfonts/NunitoSans/nunito-sans-v6-latin-ext_latin-regular.ttf') format('truetype'), 
+       url('/webfonts/NunitoSans/nunito-sans-v6-latin-ext_latin-regular.svg#NunitoSans') format('svg'); 
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/webfonts/NunitoSans/nunito-sans-v6-latin-ext_latin-italic.eot'); 
+  src: local('Nunito Sans Italic'), local('NunitoSans-Italic'),
+       url('/webfonts/NunitoSans/nunito-sans-v6-latin-ext_latin-italic.eot?#iefix') format('embedded-opentype'), 
+       url('/webfonts/NunitoSans/nunito-sans-v6-latin-ext_latin-italic.woff2') format('woff2'), 
+       url('/webfonts/NunitoSans/nunito-sans-v6-latin-ext_latin-italic.woff') format('woff'), 
+       url('/webfonts/NunitoSans/nunito-sans-v6-latin-ext_latin-italic.ttf') format('truetype'), 
+       url('/webfonts/NunitoSans/nunito-sans-v6-latin-ext_latin-italic.svg#NunitoSans') format('svg'); 
+}
+</style>
+	<meta name="application-name" content="Gravi-o-roids!" />
+	<meta name="description" content="Gravi-o-roids! is a new old-school video game, a recombination of elements of the most classic video games like Spacewar, Computer Space and Asteroids." />
+	<meta name="keywords" content="Gravi-o-roids!, Gravioroids, video game" />
+	<meta property="og:title" content="Gravi-o-roids!, a new old-school video game" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.masswerk.at/gravioroids/" />
+	<meta property="og:image" content="https://www.masswerk.at/gravioroids/preview.png"/>
+	<meta property="og:site_name" content="Outer Orbit, a &quot;Spacewar!-for-one&quot; video game" />
+	<meta property="og:description" content="Gravi-o-roids! is a tribute to the line of heritage of digital video games, combining elements of three of the most classic games, Spacewar, Computer Space, and Asteroids." />
+	<meta name="twitter:image" content="https://www.masswerk.at/gravioroids/preview.png" />
+	<link rel="image_src" href="https://www.masswerk.at/gravioroids/preview.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+</head>
+<body>
+<div id="bwToggle" onclick="document.body.className=(document.body.className=='bw'? '':'bw'); return false;" role="button" title="Toggle grayscale mode">B/W</div>
+<div id="fullscreenToggle" onclick="GraviOroids.toggleFullscreen();"></div>
+<div id="cabinetTop"><img id="marquee" src="assets/marquee.png" alt="Gravi-o-roids!" width="900" height="200" /></div>
+<div id="cabinetScreen">
+<canvas id="crt"></canvas>
+<div id="options"  class="notranslate">
+	<fieldset><label for="keyboardSelect" class="notranslate" title="Select a keyboard scheme.">Kbd.</label><select id="keyboardSelect" class="notranslate">
+		<option value="int" selected>WASD &ndash; QWERT</option>
+		<option value="fr">ZQSD &ndash; AZERT</option>
+		<option value="dvorak">,AOE &ndash; Dvorak</option>
+		<option value="arcade1">SDKL &ndash; Arcade 1</option>
+		<option value="arcade2">DGAS &ndash; Arcade 2</option>
+	</select></fieldset>
+	<fieldset>
+	<input type="checkbox" id="cbxGuidedShots" />
+		<label for="cbxGuidedShots" class="notranslate" title="Steer torpedoes by ship heading.&#10;(Like Computer Space.)">Guided Shots</label>
+	<input type="checkbox" id="cbxLowGravity" />
+		<label for="cbxLowGravity" class="notranslate" title="Reduce gravity by 50%.">Low Gravity</label>
+	<input type="checkbox" id="cbxGravityMap" />
+		<label for="cbxGravityMap" class="notranslate" title="Hide gravity map for faster execution.">Show Gravity Map</label>
+	<input type="checkbox" id="cbxStoreHS" />
+		<label for="cbxStoreHS" class="notranslate" title="Store high scores permanently between sessions.">Save High Scores</label>
+	</fieldset>
+	<fieldset><input type="checkbox" id="cbxFxEnable" /><label for="cbxFxEnable" title="Ativate/mute sound effects.">Sound</label><label id="labelFxVolume">Vol.</label><input type="range" id="fxVolume" min="0" max="100" value="50" /></fieldset>
+</div>
+</div>
+<div id="arcadebuttons" aria="hidden"></div>
+<div id="cabinetBody">
+<section id="about">
+	<h1><em>Gravi-o-roids!</em></h1>
+	<p><em>&ldquo;Gravi-o-roids!&rdquo;</em> is a new old-school game, a recombination of elements of the most classic space shooter games.</p>
+	<ul class="instructions">
+		<li>Control your own spaceship in outer space.</li>
+		<li>Stay clear of asteroids and their gravity fields.<br />Asteroids cannot be destroyed.</li>
+		<li>Destroy enemy saucers.</li>
+		<li>Outscore saucers to advance to the next level.<br />As with old arcade games, a level lasts for a fixed period of time. Time remaining as well as current scores and their balance are displayed at the top of the screen.<br />However, there is a price to endurance: you'll take just the half of the balance to the next level, the rest goes for maintenance.</li>
+		<li>Guide your shots by turning your spaceship.<br />This feature may be disabled in the game options, found below the screen.</li>
+		<li>Disable the gravity map, if your computer runs low on resources.</li>
+	</ul>
+	<p><em>Mastering the Gravity Challenge</em><br />
+	Thrust to vector perpendicularly to any asteroids in order to orbit around them. Steer right through the middle of multiple asteroids, where gravitational fields cancel out, rather than attempting to avoid such a group of asteroids.<br /> Have a look at the gravity map on the top right of the screen to get an idea of how gravity affects your ship.</p>
+	<p><em>&ldquo;Gravi-o-roids!&rdquo;</em> inhertits the following features</p>
+	<ul class="features">
+		<li>From <em><a href="/spacewar/">Spacewar!</a> (1962),</em> the very first video game for a digital computer, the basic mechanics and gravity, which is here excerted by the individual asteroids.</li>
+		<li>From <em><a href="https://en.wikipedia.org/wiki/Computer_Space" target="_blank" rel="noopener">Computer Space</a> (1971),</em> the very first arcade video game, time-based levels, guided shots, and the mechanics of the saucer opponents.</li>
+		<li>From <em><a href="https://en.wikipedia.org/wiki/Asteroids_(video_game)" target="_blank" rel="noopener">Asteroids</a> (1979),</em> the first successful single-player arcade version of a Spacewar!-like game, &mdash; well &mdash; the asteroids. However, in <em>Gravi-o-roids</em> they cannot be destroyed and excert a gravitational force on the spaceship.</li>
+		<li>The soundscape is generally based on <em>Computer Space</em>.</li>
+	</ul>
+	<p>As for the story, the game re-enacts the classic sci-fi trope of a space battle in an asteroid field. The problem being, while the enemy saucers have an anti-gravity drive, your rocket has not&hellip;</p>
+	<p>For a similar game, which combines these elements for a &ldquo;Spacewar! trainer&rdquo; or &ldquo;Spacewar!-for-one&rdquo;, see <em><a href="/outerorbit/" target="_top">Outer Orbit</a></em>.</p>
+	<p><em>&ldquo;Gravi-o-roids!&rdquo;</em> and its artwork &copy; 2017&ndash;2021 Norbert Landsteiner, <a href="https://www.masswerk.at/" target="_top">www.masswerk.at</a>.</p>
+</section>
+</div>
+</body>
+</html>
