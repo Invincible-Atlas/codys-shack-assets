@@ -180,7 +180,7 @@
     "": ""
   },
   {
-    "link": "project\\output\\cookieclicker\\index.html",
+    "link": "projects/cookieclicker/index.html",
     "title": "Cookie Clicker"
   },
   {
@@ -412,7 +412,7 @@
     "": ""
   },
   {
-    "link": "project\\output\\gravioroids\\index.html",
+    "link": "projects/gravioroids/index.html",
     "title": "Gravioroids"
   },
   {
@@ -553,7 +553,7 @@
     "": ""
   },
   {
-    "link": "project\\output\\MonkeyMart-gh-pages\\index.html",
+    "link": "projects/MonkeyMart-gh-pages/index.html",
     "title": "Monkeymart"
   },
   {
@@ -580,7 +580,7 @@
     "title": "MotoX3M Winter",
     "": ""
   },
-  { "link": "project\\output\\n-gon-master\\index.html", "title": "N-Gon" },
+  { "link": "projects/n-gon-master/index.html", "title": "N-Gon" },
   {
     "link": "projects/ns-shaft/index.html",
     "imgSrc": "projects/ns-shaft/favicon.png",
@@ -593,7 +593,7 @@
     "title": "Om Nom Bounce",
     "": ""
   },
-  { "link": "project\\output\\outerorbit\\index.html", "title": "Outer Orbit" },
+  { "link": "projects/outerorbit/index.html", "title": "Outer Orbit" },
   {
     "link": "projects/pandemic2/index.html",
     "imgSrc": "projects/pandemic2/pandemic2.png",
@@ -630,7 +630,7 @@
     "title": "PolyBranch",
     "": ""
   },
-  { "link": "project\\output\\polytrack\\index.html", "title": "Polytrack" },
+  { "link": "projects/polytrack/index.html", "title": "Polytrack" },
   {
     "link": "projects/portalflash/index.html",
     "imgSrc": "projects/portalflash/portaltheflashversion.jpg",
